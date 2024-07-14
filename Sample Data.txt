@@ -1,0 +1,32 @@
+Sample Data for ownerdetails Table:
+
+('John Doe', 'john.doe@example.com', '123-456-7890', 'owner001', 'password123', 'password123', 'New York', 'Station One'),
+('Jane Smith', 'jane.smith@example.com', '234-567-8901', 'owner002', 'password456', 'password456', 'Los Angeles', 'Station Two'),
+('Michael Johnson', 'michael.johnson@example.com', '345-678-9012', 'owner003', 'password789', 'password789', 'Chicago', 'Station Three'),
+('Emily Davis', 'emily.davis@example.com', '456-789-0123', 'owner004', 'password321', 'password321', 'Houston', 'Station Four'),
+('William Brown', 'william.brown@example.com', '567-890-1234', 'owner005', 'password654', 'password654', 'Phoenix', 'Station Five');
+
+Sample Data for clientdetails Table:
+
+('John Doe', 'john.doe@example.com', '1234567890', 'client001', 'password1', 'password1', 'New York'),
+('Jane Smith', 'jane.smith@example.com', '0987654321', 'client002', 'password2', 'password2', 'Los Angeles'),
+('Michael Brown', 'michael.brown@example.com', '1122334455', 'client003', 'password3', 'password3', 'Chicago'),
+('Emily Davis', 'emily.davis@example.com', '5566778899', 'client004', 'password4', 'password4', 'Houston'),
+('David Wilson', 'david.wilson@example.com', '6677889900', 'client005', 'password5', 'password5', 'Phoenix');
+
+
+Sample Data for ownerservices Table:
+
+('owner001', 'Oil Change', 'Standard oil change service', 29.99),
+('owner002', 'Tire Rotation', 'Tire rotation and inspection', 19.99),
+('owner003', 'Brake Inspection', 'Comprehensive brake system check', 39.99),
+('owner004', 'Battery Replacement', 'Battery testing and replacement', 89.99),
+('owner005', 'Car Wash', 'Exterior and interior car wash', 15.99);
+
+Sample Data for bookingsTable:
+
+('booking001', 'John Doe', 'Yamaha R15', 'AB123CD', '1234567890', '123 Main St, New York, NY', 'Central Station', 'owner001', '2023-07-01', 'Oil Change', 'client001'),
+('booking002', 'Jane Smith', 'Honda CBR', 'EF456GH', '0987654321', '456 Elm St, Los Angeles, CA', 'Westside Station', 'owner002', '2023-07-02', 'Brake Inspection', 'client002'),
+('booking003', 'Michael Brown', 'Suzuki GSX', 'IJ789KL', '1122334455', '789 Pine St, Chicago, IL', 'Northside Station', 'owner003', '2023-07-03', 'Tire Replacement', 'client003'),
+('booking004', 'Emily Davis', 'Kawasaki Ninja', 'MN012OP', '5566778899', '101 Maple St, Houston, TX', 'Eastside Station', 'owner004', '2023-07-04', 'Chain Adjustment', 'client004'),
+('booking005', 'David Wilson', 'Ducati Panigale', 'QR345ST', '6677889900', '202 Oak St, Phoenix, AZ', 'Southside Station', 'owner005', '2023-07-05', 'Full Service', 'client005');
