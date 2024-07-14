@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Bike Service 
+## Overview ##
+This project is a full-stack web application designed to manage and book services at various stations. The application consists of a frontend built with React.js and a backend server built with Node.js and Express, connected to a SQL database. Users can browse available stations, view the services offered at each station, and book services.
+<br/>
+## Prerequisites ##
+Node.js
+npm (Node Package Manager)
+SQL Database (e.g., MySQL, PostgreSQL)
+<br/>
+## Getting Started ##
+### 1.Clone the repository: ###
+```bash
+https://github.com/lokeshwaran105/Bike-Service.git
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 2.Install dependencies: ###
+Navigate to the root directory and install the dependencies:
+```bash
+cd Bike-service
+npm install
+```
 
-## Available Scripts
+### 3.Set up the SQL database: ###
+Ensure your SQL database is running and set up the necessary tables. Configure your SQL database with your details in #server.js# file
+```bash
+host: 'localhost',
+user: 'YOUR_USERNAME',
+password: 'YOUR_PASSWORD',
+database: 'bikeservice'
+```
 
-In the project directory, you can run:
+### 4.Create Tables: ###
+```bash
+CREATE TABLE ownerdetails ( id INT AUTO_INCREMENT PRIMARY KEY, full_name VARCHAR(255) not null, email VARCHAR(255) NOT NULL UNIQUE, phone_no VARCHAR(255) not null UNIQUE, owner_id VARCHAR(255) not null UNIQUE, n_pass VARCHAR(255) not null, c_pass VARCHAR(255) not null, city VARCHAR(255) not null, station_name VARCHAR(255));
+CREATE TABLE ownerservices ( id INT AUTO_INCREMENT PRIMARY KEY,owner_id VARCHAR(255), service_name VARCHAR(255) NOT NULL, service_desc VARCHAR(255), service_price DECIMAL(10, 2),FOREIGN KEY (owner_id) REFERENCES ownerdetails(owner_id));
+CREATE TABLE clientdetails ( id INT AUTO_INCREMENT PRIMARY KEY, full_name VARCHAR(255) not null, email VARCHAR(255) NOT NULL UNIQUE, phone_no VARCHAR(255) not null UNIQUE, client_id VARCHAR(255) not null UNIQUE, n_pass VARCHAR(255) not null, c_pass VARCHAR(255) not null, city VARCHAR(255) not null);
+CREATE TABLE bookings (id VARCHAR(255) PRIMARY KEY, client_name VARCHAR(255) NOT NULL, bike_no VARCHAR(255) NOT NULL, bike_regno VARCHAR(255) NOT NULL, phone_no VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, station_name VARCHAR(255) NOT NULL, owner_id VARCHAR(255) NOT NULL, booked_date VARCHAR(255) NOT NULL, service_name VARCHAR(255) NOT NULL, client_id VARCHAR(255) NOT NULL);
+```
 
-### `npm start`
+### 5.Running the Application ###
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Run the server file:
+```bash
+cd src/backend
+node server.js
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run the index.js file:
+```bash
+npm start
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
