@@ -21,7 +21,7 @@ npm install
 ```
 
 ### 3.Set up the SQL database: ###
-Ensure your SQL database is running and set up the necessary tables. Configure your SQL database with your details in #server.js# file
+Ensure your SQL database is running and set up the necessary tables. Configure your SQL database with your details in server.js file
 ```bash
 host: 'localhost',
 user: 'YOUR_USERNAME',
